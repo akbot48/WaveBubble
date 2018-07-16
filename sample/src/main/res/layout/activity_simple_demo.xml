@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SimpleDemoActivity">
+<com.bot48.wavebubble.BezierView
+    android:id="@+id/bezierView"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintBottom_toTopOf="@+id/bezierWave"
+    android:layout_width="match_parent"
+    android:layout_height="0dp" />
+    <com.bot48.wavebubble.BezierWaveView
+        android:id="@+id/bezierWave"
+        android:layout_width="match_parent"
+        app:layout_constraintTop_toBottomOf="@id/bezierView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_height="0dp" />
+
+    <com.bot48.wavebubble.DoubleWaveBubbleView
+        android:id="@+id/bubble"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</android.support.constraint.ConstraintLayout>
