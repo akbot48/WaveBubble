@@ -144,11 +144,11 @@ public class DoubleWaveBubbleView extends View {
         mWidth = getMeasuredWidth();
         mHeight = getMeasuredHeight();
         mWidth = mHeight = Math.min(mWidth,mHeight);
-        mHalfWaveWidth = getMeasuredWidth()/waveCount/2;
+        mHalfWaveWidth = mWidth/waveCount/2;
         mQuadWaveWidth = mHalfWaveWidth/2;
-        baseLineY = (int) ((1f-mPercent/100f)*getMeasuredHeight());//wave base line y value
-        centerX = getMeasuredWidth()/2;
-        centerY = getMeasuredHeight()/2;
+        baseLineY = (int) ((1f-mPercent/100f)*mHeight);//wave base line y value
+        centerX = mWidth/2;
+        centerY = mHeight/2;
         valueAnimator = ValueAnimator.ofInt(0,mHalfWaveWidth*2);
         valueAnimator.setDuration(1000);
         valueAnimator.setRepeatMode(ValueAnimator.RESTART);
@@ -166,7 +166,7 @@ public class DoubleWaveBubbleView extends View {
 
     public void setPercent(int mPercent) {
         this.mPercent = mPercent;
-        baseLineY = (int) ((1f-mPercent/100f)*getMeasuredHeight());
+        baseLineY = (int) ((1f-mPercent/100f)*mHeight);
         invalidate();
     }
 }
