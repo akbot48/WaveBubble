@@ -144,6 +144,7 @@ public class DoubleWaveBubbleView extends View {
         mWidth = getMeasuredWidth();
         mHeight = getMeasuredHeight();
         mWidth = mHeight = Math.min(mWidth,mHeight);
+        setMeasuredDimension(mWidth,mHeight);
         mHalfWaveWidth = mWidth/waveCount/2;
         mQuadWaveWidth = mHalfWaveWidth/2;
         baseLineY = (int) ((1f-mPercent/100f)*mHeight);//wave base line y value
